@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#3DAEE0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#13213A" media="(prefers-color-scheme: dark)" />
+
+    <title>VAT Summer Saver — UK Summer VAT Relief Calculator (25 Jun – 1 Sept 2026)</title>
+    <meta
+      name="description"
+      content="Free UK Summer VAT relief calculator for the Great British Summer Savings (25 June – 1 September 2026). Work out the correct 5% summer price for children's meals, family cinema and theatre tickets, and attraction admissions — without the 15%-off mistake."
+    />
+    <meta name="keywords" content="UK summer VAT relief, Great British Summer Savings, summer VAT calculator, 5% VAT 2026, children's meals VAT, family ticket VAT, HMRC summer VAT, VAT Summer Saver app" />
+    <meta name="author" content="VAT Summer Saver" />
+    <link rel="canonical" href="https://vatsummersaver.co.uk/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VAT Summer Saver" />
+    <meta property="og:title" content="VAT Summer Saver — UK Summer VAT Relief Calculator" />
+    <meta
+      property="og:description"
+      content="Work out the correct 5% summer VAT price for qualifying supplies between 25 June and 1 September 2026 — without the 15%-off mistake."
+    />
+    <meta property="og:url" content="https://vatsummersaver.co.uk/" />
+    <meta property="og:image" content="https://vatsummersaver.co.uk/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_GB" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VAT Summer Saver — UK Summer VAT Relief Calculator" />
+    <meta
+      name="twitter:description"
+      content="Work out the correct 5% summer VAT price for qualifying supplies between 25 June and 1 September 2026."
+    />
+    <meta name="twitter:image" content="https://vatsummersaver.co.uk/images/og-image.jpg" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="preload" as="image" href="images/hero-summer.jpg" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "VAT Summer Saver",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "iOS 17, iPadOS 17",
+        "description": "UK Summer VAT relief calculator for the Great British Summer Savings (25 June – 1 September 2026). Works out the correct 5% summer price for qualifying supplies.",
+        "url": "https://vatsummersaver.co.uk/",
+        "image": "https://vatsummersaver.co.uk/images/og-image.jpg",
+        "inLanguage": "en-GB",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Jon Bonnick"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Great British Summer Savings VAT relief?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A temporary reduction of UK VAT from 20% to 5% on selected family-focused supplies between 25 June and 1 September 2026. It applies to children's dine-in meals, child or family cinema and theatre tickets, and admissions to attractions like theme parks, zoos and museums."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I just subtract 15% from the till price?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The rate drops by 15 percentage points, but that is not 15% off the price. The correct adjustment on a price that includes 20% VAT is to multiply by 0.875 (12.5% off) — because 1.05 ÷ 1.20 = 0.875."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are takeaway meals included?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Only dine-in children's meals from the children's menu qualify. Takeaway and delivery are excluded."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do adult cinema tickets qualify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only child tickets and family tickets (sold as one package including at least one child admission) qualify. Adult-only tickets stay at 20% VAT."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#calculator">Skip to calculator</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="VAT Summer Saver home">
+        <img src="images/app-icon.png" alt="" width="44" height="44" class="brand-icon" />
+        <span class="brand-name">VAT Summer Saver</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#calculator">Calculator</a>
+        <a href="#what-qualifies">What qualifies</a>
+        <a href="#maths">The maths</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="images/hero-summer.jpg"
+            alt=""
+            width="1600"
+            height="1067"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <span class="eyebrow">25 June – 1 September 2026</span>
+          <h1 id="hero-title">
+            The UK summer<br />
+            VAT calculator that<br />
+            gets it right.
+          </h1>
+          <p class="lede">
+            For the Great British Summer Savings, VAT drops from 20% to 5% on
+            children's meals, family tickets and attraction admissions. Work
+            out the correct price below — or get the iOS app for receipts,
+            history and bundles on the go.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#calculator">Open the calculator</a>
+            <a class="btn btn-ghost" href="#download">Get the iOS app</a>
+          </div>
+          <ul class="hero-stats" aria-label="At a glance">
+            <li><strong>20%&nbsp;→&nbsp;5%</strong><span>Standard to summer rate</span></li>
+            <li><strong>×&nbsp;0.875</strong><span>Correct till-price adjustment</span></li>
+            <li><strong>10&nbsp;weeks</strong><span>25 Jun – 1 Sept 2026</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="calculator" class="section calc-section" aria-labelledby="calc-title">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">Calculator</span>
+            <h2 id="calc-title">Work out the summer price</h2>
+            <p class="muted">
+              Enter the till price, choose whether it already includes VAT and
+              pick a category. We apply HMRC penny rounding so the numbers
+              match what's on the receipt.
+            </p>
+          </header>
+
+          <form id="vat-form" class="calc-card" novalidate>
+            <div class="field">
+              <label for="amount">Amount</label>
+              <div class="amount-input">
+                <span class="currency">£</span>
+                <input
+                  type="text"
+                  inputmode="decimal"
+                  id="amount"
+                  name="amount"
+                  placeholder="0.00"
+                  autocomplete="off"
+                  aria-describedby="amount-help"
+                />
+              </div>
+              <p id="amount-help" class="hint">The price as displayed on the till or quote.</p>
+            </div>
+
+            <fieldset class="field">
+              <legend>This price…</legend>
+              <div class="segmented" role="radiogroup" aria-label="Price basis">
+                <input type="radio" id="basis-gross" name="basis" value="gross" checked />
+                <label for="basis-gross">Includes VAT</label>
+                <input type="radio" id="basis-net" name="basis" value="net" />
+                <label for="basis-net">Excludes VAT</label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category" name="category">
+                <option value="childrensMealDineIn">Children's dine-in meal</option>
+                <option value="cinemaChildOrFamilyTicket">Cinema — child or family ticket</option>
+                <option value="theatreChildOrFamilyTicket">Theatre — child or family ticket</option>
+                <option value="attractionAdmission">Attraction admission</option>
+                <option value="other">Other / not eligible</option>
+              </select>
+              <p id="cat-help" class="hint" data-role="category-hint">
+                Children's menu items for dine-in only. Takeaway and adult menu items are excluded.
+              </p>
+            </div>
+
+            <div class="field">
+              <label for="date">Date of supply</label>
+              <input type="date" id="date" name="date" value="2026-07-15" min="2026-01-01" max="2027-01-01" />
+              <p id="date-help" class="hint" data-role="date-hint"></p>
+            </div>
+          </form>
+
+          <div class="results" aria-live="polite">
+            <article class="result-card result-standard">
+              <header>
+                <span class="tag">Standard 20%</span>
+                <h3>Normal price</h3>
+              </header>
+              <p class="big" data-role="standard-gross">£0.00</p>
+              <dl class="breakdown">
+                <div><dt>Net</dt><dd data-role="standard-net">£0.00</dd></div>
+                <div><dt>VAT</dt><dd data-role="standard-vat">£0.00</dd></div>
+              </dl>
+            </article>
+
+            <article class="result-card result-reduced">
+              <header>
+                <span class="tag tag-reduced">Summer 5%</span>
+                <h3>Summer price</h3>
+              </header>
+              <p class="big" data-role="reduced-gross">£0.00</p>
+              <dl class="breakdown">
+                <div><dt>Net</dt><dd data-role="reduced-net">£0.00</dd></div>
+                <div><dt>VAT</dt><dd data-role="reduced-vat">£0.00</dd></div>
+              </dl>
+            </article>
+
+            <article class="result-card result-saving">
+              <header>
+                <span class="tag tag-saving">You save</span>
+                <h3>Customer saving</h3>
+              </header>
+              <p class="big" data-role="saving">£0.00</p>
+              <dl class="breakdown">
+                <div><dt>Of till price</dt><dd data-role="saving-percent">0.0%</dd></div>
+                <div><dt>Quick check</dt><dd data-role="quick-check">price × 15 ÷ 120</dd></div>
+              </dl>
+            </article>
+          </div>
+
+          <p class="disclaimer">
+            Guidance only — always confirm with HMRC notices and your accountant.
+            Calculations follow HMRC penny rounding (VATREC12030).
+          </p>
+        </div>
+      </section>
+
+      <section id="what-qualifies" class="section" aria-labelledby="qualifies-title">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">Eligibility</span>
+            <h2 id="qualifies-title">What qualifies for 5% — and what doesn't</h2>
+          </header>
+
+          <div class="grid two-col">
+            <article class="card">
+              <h3>Children's dine-in meals</h3>
+              <p><strong>Qualifies:</strong> fixed-price kids menu deals, individual items on a children's menu, non-alcoholic drinks included in a qualifying meal.</p>
+              <p><strong>Excluded:</strong> takeaway and delivery, adult-menu items, shared meals, anything with alcohol.</p>
+            </article>
+            <article class="card">
+              <h3>Cinema & theatre</h3>
+              <p><strong>Qualifies:</strong> child tickets and family tickets sold as one package including at least one child admission.</p>
+              <p><strong>Excluded:</strong> adult-only tickets, concessions, merchandise, booking fees.</p>
+            </article>
+            <article class="card">
+              <h3>Attraction admissions</h3>
+              <p><strong>Qualifies:</strong> entry to theme parks, water parks, fairs, circuses, museums, zoos, aquariums and soft play.</p>
+              <p><strong>Excluded:</strong> pay-per-ride charges, sports participation, separate retail, parking and food.</p>
+            </article>
+            <article class="card">
+              <h3>Definitely 20%</h3>
+              <p>Adult-menu food, takeaway and delivery, adult-only cinema or theatre tickets, sports facilities, pay-per-ride charges, general retail goods.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="maths" class="section section-tinted" aria-labelledby="maths-title">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">The maths</span>
+            <h2 id="maths-title">Why "subtract 15%" is wrong</h2>
+            <p class="muted">
+              The rate drops by 15 percentage points — but that's <em>not</em>
+              15% off the till price. Here's the working.
+            </p>
+          </header>
+
+          <ol class="working">
+            <li>
+              <span class="step-num">1</span>
+              <div>
+                <h3>The tempting shortcut</h3>
+                <p>The rate drops from 20% to 5% — 15 percentage points. So some people take 15% off the price they see on the till.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <div>
+                <h3>What that gives you (wrong)</h3>
+                <p><code>£120 × 0.85 = £102</code> — too low. The right shortcut is 12.5% off: <code>£120 × 0.875 = £105</code>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <div>
+                <h3>Why 15% is the wrong number</h3>
+                <p>VAT is charged on the net price, not as a slice of the total. £120 is £100 net + £20 VAT. 15 percentage points off the rate is not 15% off the price.</p>
+              </div>
+            </li>
+            <li class="answer">
+              <span class="step-num">4</span>
+              <div>
+                <h3>The correct method</h3>
+                <p>Strip the 20% VAT first: <code>£120 ÷ 1.20 = £100</code>. Add 5% VAT: <code>£100 × 1.05 = £105</code>. Summer price <strong>£105</strong>, saving <strong>£15</strong>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">5</span>
+              <div>
+                <h3>Or one multiplication</h3>
+                <p>Take 12.5% off — multiply by 0.875. Because <code>1.05 ÷ 1.20 = 0.875</code>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">6</span>
+              <div>
+                <h3>Where 15 does come in</h3>
+                <p>The saving is 15% of the net price. Quick refund check: <code>price × 15 ÷ 120</code> (e.g. £120 → £15).</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="download" class="section section-download" aria-labelledby="download-title">
+        <div class="container download-grid">
+          <div>
+            <span class="eyebrow">iOS app</span>
+            <h2 id="download-title">Take it with you</h2>
+            <p class="muted">
+              The full app does bundles, history, receipt scanning and a
+              business mode for adjusting back-office records — all on your
+              iPhone or iPad.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#" aria-disabled="true">Coming to the App Store</a>
+              <a class="btn btn-ghost" href="#calculator">Use the web calculator</a>
+            </div>
+          </div>
+          <div class="download-art">
+            <img src="images/beach.jpg" alt="Striped deck chairs and umbrellas on a sunny British beach" width="1600" height="1067" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section" aria-labelledby="faq-title">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">FAQ</span>
+            <h2 id="faq-title">Common questions</h2>
+          </header>
+
+          <div class="faq">
+            <details>
+              <summary>What is the Great British Summer Savings VAT relief?</summary>
+              <p>A temporary reduction of UK VAT from 20% to 5% on selected family-focused supplies between 25 June and 1 September 2026. It applies to children's dine-in meals, child or family cinema and theatre tickets, and admissions to attractions like theme parks, zoos and museums.</p>
+            </details>
+            <details>
+              <summary>Can I just subtract 15% from the till price?</summary>
+              <p>No. The rate drops by 15 percentage points, but that is not 15% off the price. The correct adjustment on a price that includes 20% VAT is to multiply by 0.875 (12.5% off) — because 1.05 ÷ 1.20 = 0.875.</p>
+            </details>
+            <details>
+              <summary>Are takeaway meals included?</summary>
+              <p>No. Only dine-in children's meals from the children's menu qualify. Takeaway and delivery are excluded.</p>
+            </details>
+            <details>
+              <summary>Do adult cinema tickets qualify?</summary>
+              <p>Only child tickets and family tickets (sold as one package including at least one child admission) qualify. Adult-only tickets stay at 20% VAT.</p>
+            </details>
+            <details>
+              <summary>Is this an official HMRC tool?</summary>
+              <p>No. This is an independent calculator. Always confirm with current HMRC notices and your accountant.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand">
+            <img src="images/app-icon.png" alt="" width="36" height="36" class="brand-icon" />
+            <span class="brand-name">VAT Summer Saver</span>
+          </div>
+          <p class="muted small">A UK Summer VAT relief calculator for the Great British Summer Savings, 25 June – 1 September 2026.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="#calculator">Calculator</a>
+          <a href="#what-qualifies">What qualifies</a>
+          <a href="#maths">The maths</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <p class="muted small copy">© <span id="year">2026</span> VAT Summer Saver. Guidance only — not legal or tax advice.</p>
+      </div>
+    </footer>
+
+    <script src="calculator.js" defer></script>
+  </body>
+</html>
