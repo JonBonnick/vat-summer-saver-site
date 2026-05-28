@@ -812,6 +812,53 @@ code {
   box-shadow: var(--shadow-card-strong);
 }
 
+.qr-card {
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-card-strong);
+  justify-self: center;
+  max-width: 320px;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .qr-card {
+    background: #f4efe5;
+  }
+}
+
+.qr-card img {
+  width: 220px;
+  height: 220px;
+  display: block;
+}
+
+.qr-card figcaption {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.qr-card .qr-title {
+  font-weight: 600;
+  color: #1f2e3d;
+  font-size: 0.95rem;
+}
+
+.qr-card .qr-sub {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  color: #5a6b7f;
+}
+
 /* ---------- FAQ ---------- */
 .faq {
   display: grid;
