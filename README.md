@@ -25,11 +25,22 @@ so paths starting with `_` are served correctly.
 
 ### Custom domain
 
-1. Add the domain in the Pages settings (creates a `CNAME` file).
-2. At the registrar, add a `CNAME` record pointing the domain to
-   `<user>.github.io`, or `A`/`AAAA` records to GitHub's Pages IPs.
-3. Update `og:url`, `canonical`, the sitemap and `robots.txt` to the
-   final domain.
+When a domain (e.g. `vatsummersaver.co.uk`) is ready:
+
+1. In the registrar (Cloudflare/Porkbun/Namecheap), point the domain at
+   GitHub Pages:
+   - Apex (`example.com`): `A` records to `185.199.108.153`,
+     `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (or
+     `AAAA` for IPv6).
+   - Subdomain (`www`): `CNAME` to `<user>.github.io`.
+2. In the repo's Pages settings, set the custom domain and tick
+   "Enforce HTTPS". GitHub will create a `CNAME` file on the branch.
+3. Update these references to the new origin:
+   - `<link rel="canonical">` and `og:url`/`twitter:image`/`og:image`
+     in `index.html`
+   - `url` and `image` in the JSON-LD `WebApplication` block
+   - `<loc>` in `sitemap.xml`
+   - `Sitemap:` line in `robots.txt`
 
 ## Structure
 
