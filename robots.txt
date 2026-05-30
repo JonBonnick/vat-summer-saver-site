@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jonbonnick.github.io/vat-summer-saver-site/sitemap.xml
+Sitemap: https://summervatcalculator.co.uk/sitemap.xml
