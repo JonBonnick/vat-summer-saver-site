@@ -25,7 +25,8 @@ so paths starting with `_` are served correctly.
 
 ### Custom domain
 
-When a domain (e.g. `vatsummersaver.co.uk`) is ready:
+Live on `summervatcalculator.co.uk` (CNAME committed at the root of
+the public mirror). To move to a different domain:
 
 1. In the registrar (Cloudflare/Porkbun/Namecheap), point the domain at
    GitHub Pages:
@@ -34,13 +35,18 @@ When a domain (e.g. `vatsummersaver.co.uk`) is ready:
      `AAAA` for IPv6).
    - Subdomain (`www`): `CNAME` to `<user>.github.io`.
 2. In the repo's Pages settings, set the custom domain and tick
-   "Enforce HTTPS". GitHub will create a `CNAME` file on the branch.
-3. Update these references to the new origin:
-   - `<link rel="canonical">` and `og:url`/`twitter:image`/`og:image`
-     in `index.html`
-   - `url` and `image` in the JSON-LD `WebApplication` block
+   "Enforce HTTPS". GitHub will create/update the `CNAME` file on the
+   branch.
+3. Replace `summervatcalculator.co.uk` with the new origin in:
+   - `<link rel="canonical">`, `og:url`, `og:image`, `twitter:image`
+     in `index.html`, `maths/index.html`, `privacy/index.html`,
+     `terms/index.html`, `support/index.html`
+   - `url`, `image`, `logo` and every `@id` in the JSON-LD blocks
    - `<loc>` in `sitemap.xml`
    - `Sitemap:` line in `robots.txt`
+   - All links in `llms.txt` and `llms-full.txt`
+   - The iOS app's `LegalLinks` (`Features/Paywall/UpgradePromptFooter.swift`)
+     and `SettingsView.supportURL`
 
 ## Structure
 
