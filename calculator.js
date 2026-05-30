@@ -174,6 +174,32 @@
     return Number.isFinite(value) ? value : 0;
   }
 
+  // ---------- Analytics events (GoatCounter) ----------
+  // Each event name fires at most once per page session so we measure
+  // "did this user engage" rather than "how many keystrokes did they make".
+  const firedEvents = new Set();
+
+  function trackEventOnce(name, title) {
+    if (firedEvents.has(name)) return;
+    firedEvents.add(name);
+    if (
+      typeof window === "undefined" ||
+      !window.goatcounter ||
+      typeof window.goatcounter.count !== "function"
+    ) {
+      return;
+    }
+    try {
+      window.goatcounter.count({
+        path: name,
+        title: title || name,
+        event: true,
+      });
+    } catch (_err) {
+      // Analytics must never break the calculator.
+    }
+  }
+
   // ---------- DOM wiring ----------
 
   function $(selector, root = document) {
@@ -256,6 +282,22 @@
 
     els.categoryHint.textContent = CATEGORY_HINTS[category] || "";
     els.dateHint.textContent = windowMessage(status, result.qualifies);
+
+    // Fire engagement events once per session when the user has actually
+    // produced a meaningful calculation (non-zero amount).
+    if (amount > 0) {
+      trackEventOnce("calc-run", "Calculator — first run");
+      trackEventOnce(
+        "calc-cat-" + category,
+        "Calculator — category: " + category
+      );
+      if (qualifies && !inWindow) {
+        trackEventOnce(
+          "calc-date-outside-window",
+          "Calculator — date outside relief window"
+        );
+      }
+    }
   }
 
   // Live formatting of the amount field
