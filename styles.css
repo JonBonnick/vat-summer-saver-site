@@ -196,6 +196,13 @@ a:focus-visible {
   isolation: isolate;
 }
 
+/* Compact hero keeps the impactful image but trims height so the calculator
+   sits higher up the page and is closer to the fold. */
+.hero-compact {
+  min-height: min(60vh, 540px);
+  padding: 56px 0 36px;
+}
+
 .hero-media,
 .hero-media img {
   position: absolute;
@@ -393,6 +400,26 @@ a:focus-visible {
 .app-store-badge:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
+}
+
+.app-store-badge-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-store-badge-icon {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  background: #fff;
+}
+
+.app-store-badge-with-icon picture,
+.app-store-badge-with-icon picture img {
+  display: block;
 }
 
 .hero-stats {
@@ -689,6 +716,44 @@ input[type="date"]:focus {
 
 .result-saving .big {
   color: var(--saving-strong);
+}
+
+/* When the 5% rate doesn't apply because the date is outside the relief
+   window, we still show the hypothetical price — struck through — so users
+   can see what the summer price would have been. */
+.result-reduced.is-not-applied .big {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(20, 46, 87, 0.45);
+  opacity: 0.72;
+}
+
+@media (prefers-color-scheme: dark) {
+  .result-reduced.is-not-applied .big {
+    text-decoration-color: rgba(255, 255, 255, 0.45);
+  }
+}
+
+.result-reduced.is-not-applied .breakdown,
+.result-reduced.is-ineligible .breakdown {
+  opacity: 0.65;
+}
+
+.result-note {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--secondary-text);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .result-note {
+    background: rgba(0, 0, 0, 0.25);
+  }
 }
 
 .breakdown {

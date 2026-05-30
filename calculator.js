@@ -132,6 +132,19 @@
     return "Inside the summer VAT relief window — 5% applies.";
   }
 
+  function reducedCardNote(status, qualifies) {
+    if (!qualifies) {
+      return "This category isn't included in the summer scheme. The price stays at 20% VAT.";
+    }
+    if (status === "before") {
+      return "Outside the relief window (25 Jun – 1 Sept 2026). The 5% rate would apply if the supply happened during the window — change the date above to see it live.";
+    }
+    if (status === "after") {
+      return "Outside the relief window (25 Jun – 1 Sept 2026). The 5% rate applied only during the window — change the date above to recalculate.";
+    }
+    return "";
+  }
+
   // ---------- Input parsing ----------
 
   function sanitiseAmountInput(text) {
@@ -179,9 +192,11 @@
     standardGross: $('[data-role="standard-gross"]'),
     standardNet: $('[data-role="standard-net"]'),
     standardVat: $('[data-role="standard-vat"]'),
+    reducedCard: $('[data-role="reduced-card"]'),
     reducedGross: $('[data-role="reduced-gross"]'),
     reducedNet: $('[data-role="reduced-net"]'),
     reducedVat: $('[data-role="reduced-vat"]'),
+    reducedNote: $('[data-role="reduced-note"]'),
     saving: $('[data-role="saving"]'),
     savingPercent: $('[data-role="saving-percent"]'),
     quickCheck: $('[data-role="quick-check"]'),
@@ -196,17 +211,24 @@
     const inWindow = status === "within";
 
     const result = compute(amount, basis, category);
-    const showReduced = inWindow && result.qualifies;
+    const qualifies = result.qualifies;
+    const showReducedNormally = inWindow && qualifies;
+    const showReducedStruck = qualifies && !inWindow;
 
     els.standardGross.textContent = formatGBP(result.standardGross);
     els.standardNet.textContent = formatGBP(result.netAmount);
     els.standardVat.textContent = formatGBP(result.standardVAT);
 
-    if (showReduced) {
+    if (showReducedNormally) {
       els.reducedGross.textContent = formatGBP(result.reducedGross);
       els.reducedVat.textContent = formatGBP(result.reducedVAT);
       els.saving.textContent = formatGBP(result.saving);
       els.savingPercent.textContent = formatPercent(result.savingPercent);
+    } else if (showReducedStruck) {
+      els.reducedGross.textContent = formatGBP(result.reducedGross);
+      els.reducedVat.textContent = formatGBP(result.reducedVAT);
+      els.saving.textContent = formatGBP(0);
+      els.savingPercent.textContent = formatPercent(0);
     } else {
       els.reducedGross.textContent = formatGBP(result.standardGross);
       els.reducedVat.textContent = formatGBP(result.standardVAT);
@@ -214,6 +236,18 @@
       els.savingPercent.textContent = formatPercent(0);
     }
     els.reducedNet.textContent = formatGBP(result.netAmount);
+
+    els.reducedCard.classList.toggle("is-not-applied", showReducedStruck);
+    els.reducedCard.classList.toggle("is-ineligible", !qualifies);
+
+    const note = reducedCardNote(status, qualifies);
+    if (note) {
+      els.reducedNote.textContent = note;
+      els.reducedNote.hidden = false;
+    } else {
+      els.reducedNote.textContent = "";
+      els.reducedNote.hidden = true;
+    }
 
     const quickCheck = basis === "gross"
       ? `${formatGBP(amount)} × 15 ÷ 120 = ${formatGBP((amount * 15) / 120)}`

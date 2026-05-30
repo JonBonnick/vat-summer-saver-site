@@ -44,7 +44,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
 
-    <link rel="preload" as="image" href="images/hero-summer.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/beach.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -94,7 +94,7 @@
             "name": "Can I just subtract 15% from the till price?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. The rate drops by 15 percentage points, but that is not 15% off the price. The correct adjustment on a price that includes 20% VAT is to multiply by 0.875 (12.5% off) — because 1.05 ÷ 1.20 = 0.875."
+              "text": "No. The rate drops by 15 percentage points, but that is not 15% off the price. The correct adjustment on a price that includes 20% VAT is to multiply by 0.875 (12.5% off) — because 1.05 ÷ 1.20 = 0.875. See the full working at /maths/."
             }
           },
           {
@@ -127,17 +127,17 @@
       </a>
       <nav aria-label="Primary">
         <a href="#calculator">Calculator</a>
+        <a href="#download">iOS app</a>
         <a href="#what-qualifies">What qualifies</a>
-        <a href="#maths">The maths</a>
         <a href="#faq">FAQ</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero hero-compact" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true">
           <img
-            src="images/hero-summer.jpg"
+            src="images/beach.jpg"
             alt=""
             width="1600"
             height="1067"
@@ -149,36 +149,35 @@
         <div class="hero-content">
           <span class="eyebrow">25 June – 1 September 2026</span>
           <h1 id="hero-title">
-            The UK summer<br />
-            VAT calculator that<br />
-            gets it right.
+            The UK summer VAT calculator that gets it right.
           </h1>
           <p class="lede">
             For the Great British Summer Savings, VAT drops from 20% to 5% on
             children's meals, family tickets and attraction admissions. Work
-            out the correct price below — or get the iOS app for receipts,
-            history and bundles on the go.
+            out the correct price below — or get the iOS app.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#calculator">Open the calculator</a>
             <a
-              class="app-store-badge"
+              class="app-store-badge app-store-badge-with-icon"
               href="https://apps.apple.com/app/id6774140450"
               target="_blank"
               rel="noopener"
               aria-label="Download VAT Summer Saver on the App Store"
             >
+              <img
+                class="app-store-badge-icon"
+                src="images/app-icon.png"
+                alt=""
+                width="56"
+                height="56"
+              />
               <picture>
                 <source srcset="images/app-store-badge-white.svg" media="(prefers-color-scheme: dark)" />
                 <img src="images/app-store-badge-black.svg" alt="Download on the App Store" width="167" height="56" />
               </picture>
             </a>
           </div>
-          <ul class="hero-stats" aria-label="At a glance">
-            <li><strong>20%&nbsp;→&nbsp;5%</strong><span>Standard to summer rate</span></li>
-            <li><strong>×&nbsp;0.875</strong><span>Correct till-price adjustment</span></li>
-            <li><strong>10&nbsp;weeks</strong><span>25 Jun – 1 Sept 2026</span></li>
-          </ul>
         </div>
       </section>
 
@@ -256,7 +255,7 @@
               </dl>
             </article>
 
-            <article class="result-card result-reduced">
+            <article class="result-card result-reduced" data-role="reduced-card">
               <header>
                 <span class="tag tag-reduced">Summer 5%</span>
                 <h3>Summer price</h3>
@@ -266,6 +265,7 @@
                 <div><dt>Net</dt><dd data-role="reduced-net">£0.00</dd></div>
                 <div><dt>VAT</dt><dd data-role="reduced-vat">£0.00</dd></div>
               </dl>
+              <p class="result-note" data-role="reduced-note" hidden></p>
             </article>
 
             <article class="result-card result-saving">
@@ -285,95 +285,6 @@
             Guidance only — always confirm with HMRC notices and your accountant.
             Calculations follow HMRC penny rounding (VATREC12030).
           </p>
-        </div>
-      </section>
-
-      <section id="what-qualifies" class="section" aria-labelledby="qualifies-title">
-        <div class="container">
-          <header class="section-header">
-            <span class="eyebrow">Eligibility</span>
-            <h2 id="qualifies-title">What qualifies for 5% — and what doesn't</h2>
-          </header>
-
-          <div class="grid two-col">
-            <article class="card">
-              <h3>Children's dine-in meals</h3>
-              <p><strong>Qualifies:</strong> fixed-price kids menu deals, individual items on a children's menu, non-alcoholic drinks included in a qualifying meal.</p>
-              <p><strong>Excluded:</strong> takeaway and delivery, adult-menu items, shared meals, anything with alcohol.</p>
-            </article>
-            <article class="card">
-              <h3>Cinema & theatre</h3>
-              <p><strong>Qualifies:</strong> child tickets and family tickets sold as one package including at least one child admission.</p>
-              <p><strong>Excluded:</strong> adult-only tickets, concessions, merchandise, booking fees.</p>
-            </article>
-            <article class="card">
-              <h3>Attraction admissions</h3>
-              <p><strong>Qualifies:</strong> entry to theme parks, water parks, fairs, circuses, museums, zoos, aquariums and soft play.</p>
-              <p><strong>Excluded:</strong> pay-per-ride charges, sports participation, separate retail, parking and food.</p>
-            </article>
-            <article class="card">
-              <h3>Definitely 20%</h3>
-              <p>Adult-menu food, takeaway and delivery, adult-only cinema or theatre tickets, sports facilities, pay-per-ride charges, general retail goods.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="maths" class="section section-tinted" aria-labelledby="maths-title">
-        <div class="container">
-          <header class="section-header">
-            <span class="eyebrow">The maths</span>
-            <h2 id="maths-title">Why "subtract 15%" is wrong</h2>
-            <p class="muted">
-              The rate drops by 15 percentage points — but that's <em>not</em>
-              15% off the till price. Here's the working.
-            </p>
-          </header>
-
-          <ol class="working">
-            <li>
-              <span class="step-num">1</span>
-              <div>
-                <h3>The tempting shortcut</h3>
-                <p>The rate drops from 20% to 5% — 15 percentage points. So some people take 15% off the price they see on the till.</p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">2</span>
-              <div>
-                <h3>What that gives you (wrong)</h3>
-                <p><code>£120 × 0.85 = £102</code> — too low. The right shortcut is 12.5% off: <code>£120 × 0.875 = £105</code>.</p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">3</span>
-              <div>
-                <h3>Why 15% is the wrong number</h3>
-                <p>VAT is charged on the net price, not as a slice of the total. £120 is £100 net + £20 VAT. 15 percentage points off the rate is not 15% off the price.</p>
-              </div>
-            </li>
-            <li class="answer">
-              <span class="step-num">4</span>
-              <div>
-                <h3>The correct method</h3>
-                <p>Strip the 20% VAT first: <code>£120 ÷ 1.20 = £100</code>. Add 5% VAT: <code>£100 × 1.05 = £105</code>. Summer price <strong>£105</strong>, saving <strong>£15</strong>.</p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">5</span>
-              <div>
-                <h3>Or one multiplication</h3>
-                <p>Take 12.5% off — multiply by 0.875. Because <code>1.05 ÷ 1.20 = 0.875</code>.</p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">6</span>
-              <div>
-                <h3>Where 15 does come in</h3>
-                <p>The saving is 15% of the net price. Quick refund check: <code>price × 15 ÷ 120</code> (e.g. £120 → £15).</p>
-              </div>
-            </li>
-          </ol>
         </div>
       </section>
 
@@ -420,7 +331,38 @@
         </div>
       </section>
 
-      <section id="faq" class="section" aria-labelledby="faq-title">
+      <section id="what-qualifies" class="section" aria-labelledby="qualifies-title">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">Eligibility</span>
+            <h2 id="qualifies-title">What qualifies for 5% — and what doesn't</h2>
+          </header>
+
+          <div class="grid two-col">
+            <article class="card">
+              <h3>Children's dine-in meals</h3>
+              <p><strong>Qualifies:</strong> fixed-price kids menu deals, individual items on a children's menu, non-alcoholic drinks included in a qualifying meal.</p>
+              <p><strong>Excluded:</strong> takeaway and delivery, adult-menu items, shared meals, anything with alcohol.</p>
+            </article>
+            <article class="card">
+              <h3>Cinema & theatre</h3>
+              <p><strong>Qualifies:</strong> child tickets and family tickets sold as one package including at least one child admission.</p>
+              <p><strong>Excluded:</strong> adult-only tickets, concessions, merchandise, booking fees.</p>
+            </article>
+            <article class="card">
+              <h3>Attraction admissions</h3>
+              <p><strong>Qualifies:</strong> entry to theme parks, water parks, fairs, circuses, museums, zoos, aquariums and soft play.</p>
+              <p><strong>Excluded:</strong> pay-per-ride charges, sports participation, separate retail, parking and food.</p>
+            </article>
+            <article class="card">
+              <h3>Remaining at 20%</h3>
+              <p>Adult-menu food, takeaway and delivery, adult-only cinema or theatre tickets, sports facilities, pay-per-ride charges, general retail goods.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section section-tinted" aria-labelledby="faq-title">
         <div class="container">
           <header class="section-header">
             <span class="eyebrow">FAQ</span>
@@ -435,6 +377,7 @@
             <details>
               <summary>Can I just subtract 15% from the till price?</summary>
               <p>No. The rate drops by 15 percentage points, but that is not 15% off the price. The correct adjustment on a price that includes 20% VAT is to multiply by 0.875 (12.5% off) — because 1.05 ÷ 1.20 = 0.875.</p>
+              <p><a href="maths/">Read the full working&nbsp;→</a></p>
             </details>
             <details>
               <summary>Are takeaway meals included?</summary>
@@ -464,8 +407,9 @@
         </div>
         <nav aria-label="Footer">
           <a href="#calculator">Calculator</a>
+          <a href="#download">iOS app</a>
           <a href="#what-qualifies">What qualifies</a>
-          <a href="#maths">The maths</a>
+          <a href="maths/">The maths</a>
           <a href="#faq">FAQ</a>
         </nav>
         <p class="muted small copy">© <span id="year">2026</span> VAT Summer Saver. Guidance only — not legal or tax advice.</p>
