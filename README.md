@@ -1,6 +1,6 @@
-# VAT Summer Saver — marketing site
+# Summer VAT Calculator — marketing site
 
-Static site for the VAT Summer Saver iOS app. Plain HTML, CSS, and a
+Static site for the Summer VAT Calculator iOS app. Plain HTML, CSS, and a
 single JavaScript file for the in-page calculator. No build step.
 
 ## Local preview

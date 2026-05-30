@@ -1,5 +1,5 @@
 /*
- * VAT Summer Saver — web calculator
+ * Summer VAT Calculator — web calculator
  *
  * Mirrors VATEngine.swift / VATTypes.swift:
  *  - Standard VAT: 20%

@@ -1,6 +1,6 @@
 {
-  "name": "VAT Summer Saver",
-  "short_name": "VAT Summer Saver",
+  "name": "Summer VAT Calculator",
+  "short_name": "Summer VAT Calc",
   "description": "UK Summer VAT relief calculator for the Great British Summer Savings (25 June – 1 September 2026).",
   "start_url": "/",
   "scope": "/",
