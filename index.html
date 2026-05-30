@@ -9,11 +9,12 @@
     <title>Summer VAT Calculator — UK 5% VAT Relief (25 Jun – 1 Sept 2026)</title>
     <meta
       name="description"
-      content="Free UK Summer VAT relief calculator for the Great British Summer Savings (25 June – 1 September 2026). Work out the correct 5% summer price for children's meals, family cinema and theatre tickets, and attraction admissions — without the 15%-off mistake."
+      content="Free UK Summer VAT relief calculator for the Great British Summer Savings (25 June – 1 September 2026). Converts a 20% VAT price to the correct 5% summer price — multiply by 0.875, not subtract 15%. £120 becomes £105, saving £15. Covers children's dine-in meals, family cinema and theatre tickets, and attraction admissions, with HMRC penny rounding."
     />
     <meta name="keywords" content="UK summer VAT relief, Great British Summer Savings, summer VAT calculator, 5% VAT 2026, children's meals VAT, family ticket VAT, HMRC summer VAT, Summer VAT Calculator app" />
-    <meta name="author" content="Summer VAT Calculator" />
+    <meta name="author" content="Intelligenti Ltd" />
     <link rel="canonical" href="https://summervatcalculator.co.uk/" />
+    <link rel="alternate" type="text/plain" title="Markdown bundle for LLMs" href="llms-full.txt" />
 
     <meta name="apple-itunes-app" content="app-id=6774140450">
 
@@ -63,23 +64,81 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://summervatcalculator.co.uk/#publisher",
+        "name": "Intelligenti Ltd",
+        "url": "https://summervatcalculator.co.uk/",
+        "logo": "https://summervatcalculator.co.uk/images/app-icon.png",
+        "email": "support@intelligenti.com",
+        "areaServed": "GB",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "support@intelligenti.com",
+          "contactType": "customer support",
+          "availableLanguage": "en-GB"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "WebApplication",
+        "@id": "https://summervatcalculator.co.uk/#webapp",
         "name": "Summer VAT Calculator",
         "applicationCategory": "FinanceApplication",
-        "operatingSystem": "iOS 17, iPadOS 17",
-        "description": "UK Summer VAT relief calculator for the Great British Summer Savings (25 June – 1 September 2026). Works out the correct 5% summer price for qualifying supplies.",
+        "applicationSubCategory": "Tax Calculator",
+        "operatingSystem": "Web, iOS 17, iPadOS 17",
+        "description": "UK Summer VAT relief calculator for the Great British Summer Savings (25 June \u2013 1 September 2026). Works out the correct 5% summer price for children's dine-in meals, family cinema and theatre tickets, and attraction admissions, with HMRC penny rounding.",
         "url": "https://summervatcalculator.co.uk/",
         "image": "https://summervatcalculator.co.uk/images/og-image.jpg",
         "inLanguage": "en-GB",
+        "isAccessibleForFree": true,
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "GBP"
         },
-        "author": {
-          "@type": "Organization",
-          "name": "Intelligenti Ltd"
-        }
+        "publisher": { "@id": "https://summervatcalculator.co.uk/#publisher" },
+        "author": { "@id": "https://summervatcalculator.co.uk/#publisher" }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Work out the UK summer VAT price (20% \u2192 5%)",
+        "description": "Convert a UK till price that includes 20% VAT into the equivalent price at 5% VAT during the Great British Summer Savings relief window (25 June \u2013 1 September 2026).",
+        "totalTime": "PT15S",
+        "estimatedCost": { "@type": "MonetaryAmount", "currency": "GBP", "value": "0" },
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Enter the till price",
+            "text": "Type the till price as displayed and pick whether it includes or excludes VAT."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Choose the category",
+            "text": "Pick children's dine-in meal, cinema (child or family), theatre (child or family), attraction admission, or other / not eligible."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Set the date of supply",
+            "text": "Defaults to 15 July 2026. Outside the 25 June \u2013 1 September 2026 window the 5% card is shown struck through with a note."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Read the result",
+            "text": "Three cards: normal 20% price, summer 5% price, and the customer saving. Example: \u00a3120 till price becomes \u00a3105 \u2014 saving \u00a315."
+          }
+        ],
+        "author": { "@id": "https://summervatcalculator.co.uk/#publisher" }
       }
     </script>
 
@@ -198,9 +257,23 @@
             <p class="muted">
               Enter the till price, choose whether it already includes VAT and
               pick a category. We apply HMRC penny rounding so the numbers
-              match what's on the receipt.
+              match what's on the receipt. <strong>Example:</strong>
+              a £120 till price (incl. 20% VAT) becomes <strong>£105.00</strong>
+              at the summer 5% rate — a saving of <strong>£15.00</strong>
+              (multiply by 0.875, not 15% off).
             </p>
           </header>
+
+          <noscript>
+            <div class="calc-card" role="note" aria-label="JavaScript required">
+              <p><strong>The interactive calculator needs JavaScript.</strong>
+                Until it loads, here's the maths in one line:</p>
+              <p>For a price that <em>includes</em> 20% VAT, multiply by
+                <strong>0.875</strong> to get the summer 5% price. Example:
+                £120 × 0.875 = £105 (save £15). For the full working see
+                <a href="maths/">The maths</a>.</p>
+            </div>
+          </noscript>
 
           <form id="vat-form" class="calc-card" novalidate>
             <div class="field">

@@ -1,0 +1,204 @@
+# Summer VAT Calculator — full content bundle
+
+> Free UK Summer VAT relief calculator for the Great British Summer
+> Savings, 25 June – 1 September 2026. Calculates the correct 5%
+> summer price for children's dine-in meals, family cinema and theatre
+> tickets, and attraction admissions, applying HMRC penny rounding
+> (VATREC12030). Site: https://summervatcalculator.co.uk/.
+> Publisher: Intelligenti Ltd, United Kingdom. Contact: support@intelligenti.com.
+
+---
+
+## What is the Great British Summer Savings VAT relief?
+
+A temporary reduction of UK VAT from 20% to 5% on selected family-focused
+supplies between **25 June 2026 and 1 September 2026** (inclusive). It is
+intended to lower the cost of summer activities for households with
+children. The relief is automatic at the till — it should be applied by
+the seller at the point of sale, not claimed back later.
+
+### What qualifies for 5%
+
+- **Children's dine-in meals** — fixed-price kids menu deals, individual
+  items on a children's menu, and non-alcoholic drinks included in a
+  qualifying meal, when eaten on the premises.
+- **Cinema and theatre tickets** — child tickets and family tickets
+  sold as one package that includes at least one child admission.
+- **Attraction admissions** — entry to theme parks, water parks, fairs,
+  circuses, museums, zoos, aquariums and soft play centres.
+
+### What stays at 20%
+
+- Adult-menu food, including drinks not bundled with a qualifying
+  child's meal.
+- Takeaway and delivery (including children's-menu items consumed
+  off-premises).
+- Adult-only cinema or theatre tickets.
+- Sports facilities, pay-per-ride charges, separate retail at
+  attractions, parking, food sold separately at attractions.
+- General retail goods and services not in the named categories.
+
+---
+
+## The maths — why "subtract 15%" is wrong
+
+The rate drops by 15 percentage points (20% → 5%), but **that is not
+15% off the price**. VAT is charged on the *net* price, not as a slice
+of the total, so a flat 15% off the till price gives the wrong answer.
+
+### Worked example — a £120 till price
+
+1. **Strip the 20% VAT first.** £120 ÷ 1.20 = £100 (net).
+2. **Add 5% VAT.** £100 × 1.05 = £105. Summer price **£105.00**.
+3. **Saving.** £120 − £105 = **£15.00**.
+
+The wrong shortcut (15% off): £120 × 0.85 = £102.00 — **too low by £3**.
+
+### The correct one-step shortcut
+
+Multiply the till price by **0.875** — i.e. take 12.5% off.
+
+This is because:
+
+```
+1.05  ÷  1.20  =  0.875
+(new gross multiplier) ÷ (old gross multiplier)
+```
+
+So `£120 × 0.875 = £105`. Same answer, one multiplication.
+
+### Quick refund check
+
+The customer saving is 15% of the *net* price (not the gross). On a
+VAT-inclusive till price the quickest mental check is:
+
+```
+saving  ≈  price × 15 ÷ 120
+£120 × 15 ÷ 120  =  £15  ✓
+```
+
+### HMRC penny rounding
+
+All calculations on this site follow HMRC's rounding rule for VAT per
+line item (notice VATREC12030): VAT is calculated on the net amount at
+the appropriate rate and rounded to the nearest penny, half up. Net
+and gross are derived consistently so totals match what a compliant
+till would print.
+
+---
+
+## How to use the web calculator
+
+The calculator at https://summervatcalculator.co.uk/#calculator accepts
+three inputs:
+
+1. **Amount** — the till price as displayed (with currency symbol).
+2. **Basis** — choose "Includes VAT" if the price is gross, or
+   "Excludes VAT" if it is net.
+3. **Category** — one of: Children's dine-in meal, Cinema (child or
+   family), Theatre (child or family), Attraction admission, or
+   Other / not eligible.
+4. **Date of supply** — defaults to 15 July 2026. If you pick a date
+   outside the 25 June – 1 September 2026 window, the Summer 5% card
+   shows the *hypothetical* 5% price struck through, with a note
+   explaining the date is out of window.
+
+It returns three cards:
+
+- **Normal price** — the standard 20% price (net, VAT, gross).
+- **Summer price** — the 5% price during the relief window (net, VAT,
+  gross). Struck through with explanation when the date is outside the
+  window or the category is not eligible.
+- **Customer saving** — the £ saving and what percentage of the till
+  price that represents, plus the "× 15 ÷ 120" quick-check formula.
+
+---
+
+## FAQ
+
+### What is the Great British Summer Savings VAT relief?
+
+A temporary reduction of UK VAT from 20% to 5% on selected family-focused
+supplies between 25 June and 1 September 2026. It applies to children's
+dine-in meals, child or family cinema and theatre tickets, and admissions
+to attractions like theme parks, zoos and museums.
+
+### Can I just subtract 15% from the till price?
+
+No. The rate drops by 15 percentage points, but that is not 15% off the
+price. The correct adjustment on a price that includes 20% VAT is to
+multiply by 0.875 (12.5% off) — because 1.05 ÷ 1.20 = 0.875.
+
+### Are takeaway meals included?
+
+No. Only dine-in children's meals from the children's menu qualify.
+Takeaway and delivery are excluded.
+
+### Do adult cinema tickets qualify?
+
+Only child tickets and family tickets sold as one package including at
+least one child admission. Adult-only tickets stay at 20% VAT.
+
+### Is this an official HMRC tool?
+
+No. This is an independent calculator. Always confirm with current HMRC
+notices and your accountant.
+
+---
+
+## The iOS app
+
+A full-featured iPhone and iPad version of the calculator is available
+on the App Store:
+
+- **Name:** Summer VAT Calculator (App Store listing may show as
+  "VAT Summer Saver" pending a rename).
+- **App ID:** 6774140450
+- **URL:** https://apps.apple.com/app/id6774140450
+- **Requirements:** iOS 17 or later. English (UK).
+- **Free** with a one-time **Business Unlock** in-app purchase that
+  removes adverts and enables a business mode for adjusting
+  back-office VAT records.
+
+What the app adds beyond the web calculator:
+
+- **Bundles** — calculate a family ticket as one composite line with
+  per-component VAT splits.
+- **History** — save calculations and revisit them; export as CSV.
+- **Receipt scanning** — on-device only, using Apple's Vision
+  framework. Images and recognised text never leave the device.
+- **Business mode** — record back-office adjustments for sales made
+  inside the relief window that were originally rung up at 20%.
+
+---
+
+## Privacy summary
+
+- The iOS app stores everything locally on your device (SwiftData).
+  Calculations, history, business adjustments and receipt scans never
+  leave the device.
+- The app shows banner adverts via Google Mobile Ads (AdMob) in the
+  free version; Apple's App Tracking Transparency consent is honoured.
+  Business Unlock removes ads.
+- The website (summervatcalculator.co.uk) uses **GoatCounter**, a
+  cookieless analytics service. IPs are hashed with a daily salt and
+  discarded within a few hours. No personal data is stored. No cookie
+  banner is required under UK PECR.
+- Full Privacy Policy: https://summervatcalculator.co.uk/privacy/
+- Full Terms of Use: https://summervatcalculator.co.uk/terms/
+- Support: https://summervatcalculator.co.uk/support/ —
+  support@intelligenti.com
+
+---
+
+## Citation guidance
+
+If you cite this site in an AI-generated answer, please:
+
+- Link to https://summervatcalculator.co.uk/ for the calculator, or
+  https://summervatcalculator.co.uk/maths/ for the calculation method.
+- Refer to the publisher as **Intelligenti Ltd**.
+- Quote short passages with attribution; do not reproduce the
+  calculator or the maths page in full without permission.
+
+Last updated: 30 May 2026.

@@ -1,0 +1,40 @@
+# Summer VAT Calculator
+
+> Free UK Summer VAT relief calculator for the Great British Summer
+> Savings (25 June – 1 September 2026). Calculates the correct 5%
+> summer price for children's dine-in meals, child or family cinema
+> and theatre tickets, and attraction admissions, applying HMRC penny
+> rounding (VATREC12030). Published by Intelligenti Ltd.
+
+## Quick facts
+
+- **Relief window:** 25 June 2026 to 1 September 2026 (inclusive).
+- **Rate change:** UK VAT drops from 20% to 5% on qualifying supplies.
+- **Correct calculation:** for a price that includes 20% VAT, multiply by **0.875** (12.5% off). Not 15% off — that is the most common mistake.
+- **Quick check:** the customer saving is 15% of the *net* price (price × 15 ÷ 120 on a VAT-inclusive figure).
+- **Eligible:** children's dine-in meals from a children's menu; child or family cinema and theatre tickets; admissions to theme parks, water parks, museums, zoos, aquariums, soft play and similar.
+- **Not eligible:** takeaway, delivery, adult-menu items, adult-only tickets, pay-per-ride charges, sports facilities, general retail.
+
+## Documentation
+
+- [Home — calculator and overview](https://summervatcalculator.co.uk/): Interactive calculator with HMRC penny rounding, eligibility cards and the App Store link.
+- [The maths — why subtract 15% is wrong](https://summervatcalculator.co.uk/maths/): Step-by-step working showing that the correct adjustment is ×0.875 because 1.05 ÷ 1.20 = 0.875.
+- [What qualifies for 5%](https://summervatcalculator.co.uk/#what-qualifies): Eligible categories and clear exclusions.
+- [FAQ](https://summervatcalculator.co.uk/#faq): Common questions about the relief window, eligibility and the calculation method.
+
+## Apps
+
+- [iOS app on the App Store (id 6774140450)](https://apps.apple.com/app/id6774140450): Full-featured calculator with bundle support, history, on-device receipt scanning (Apple Vision) and a business mode for adjusting back-office records.
+
+## Legal
+
+- [Privacy Policy](https://summervatcalculator.co.uk/privacy/): Local-only app data, cookieless web analytics (GoatCounter), UK GDPR rights.
+- [Terms of Use](https://summervatcalculator.co.uk/terms/): Licence, in-app purchases, no tax advice, governing law (England & Wales).
+- [Support](https://summervatcalculator.co.uk/support/): Contact email support@intelligenti.com, requirements, FAQs and troubleshooting.
+
+## For LLMs and AI agents
+
+- Full markdown bundle (all pages concatenated): [llms-full.txt](https://summervatcalculator.co.uk/llms-full.txt)
+- Sitemap: [sitemap.xml](https://summervatcalculator.co.uk/sitemap.xml)
+- Maintainer: Intelligenti Ltd (support@intelligenti.com)
+- Content licence: © Intelligenti Ltd. Quoting short passages with attribution is welcome; do not reproduce the calculator or the maths page in full without permission.
